@@ -1,0 +1,35 @@
+name: Validate skills
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    # PRs from forks: job skipped (no untrusted code in CI)
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate skills layout
+        run: python3 scripts/validate_skills.py
+
+      - name: Heuristic secret scan
+        run: python3 scripts/scan_secrets.py
+
+      - name: Run tests
+        run: python3 -m unittest discover -s tests -p 'test_*.py' -q

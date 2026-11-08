@@ -1,0 +1,28 @@
+{
+  "libraryVersion": "0.1.0",
+  "repository": "epasistemas/epa-skills",
+  "defaultBranch": "main",
+  "skills": [
+    {
+      "slug": "epa-coleta-progressiva",
+      "path": "skills/epa-coleta-progressiva",
+      "spec": "agentskills.io",
+      "metadataVersion": "0.1.0"
+    },
+    {
+      "slug": "epa-crm-operacao-revisao",
+      "path": "skills/epa-crm-operacao-revisao",
+      "metadataVersion": "0.1.0"
+    },
+    {
+      "slug": "epa-crm-conhecimento-mapeamento",
+      "path": "skills/epa-crm-conhecimento-mapeamento",
+      "metadataVersion": "0.1.0"
+    },
+    {
+      "slug": "epa-wa-operacao-revisao",
+      "path": "skills/epa-wa-operacao-revisao",
+      "metadataVersion": "0.1.0"
+    }
+  ]
+}
