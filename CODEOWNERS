@@ -1,0 +1,21 @@
+# CODEOWNERS — epa-skills
+#
+# O GitHub usa este arquivo para solicitar revisão de PRs em caminhos cobertos.
+# CODEOWNERS não substitui ACL de repositório: permissões são por repo; não há
+# isolamento por pasta, branch ou sparse-checkout. Ver docs/seguranca.md.
+#
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+* @epasistemas
+
+/.github/ @epasistemas
+/.github/workflows/ @epasistemas
+
+/skills/ @epasistemas
+/scripts/ @epasistemas
+/tests/ @epasistemas
+/docs/ @epasistemas
+
+/AGENTS.md @epasistemas
+/LICENSE @epasistemas
+/catalog.json @epasistemas
