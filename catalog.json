@@ -1,5 +1,5 @@
 {
-  "libraryVersion": "0.2.0",
+  "libraryVersion": "0.3.0",
   "repository": "epasistemas/epa-skills",
   "defaultBranch": "main",
   "skills": [
@@ -61,6 +61,12 @@
       "slug": "whatsapp-operacoes",
       "path": "skills/whatsapp-operacoes",
       "metadataVersion": "0.2.0",
+      "domain": "whatsapp"
+    },
+    {
+      "slug": "whatsapp-reconexao",
+      "path": "skills/whatsapp-reconexao",
+      "metadataVersion": "0.3.0",
       "domain": "whatsapp"
     }
   ],

@@ -21,12 +21,12 @@ scripts/                  # validação e varredura heurística de segredos
 AGENTS.md                 # regras para agentes que editam o repo
 ```
 
-### Skills publicadas (`catalog.json`, 0.2.0)
+### Skills publicadas (`catalog.json`, 0.3.0)
 
 | Domínio | Slugs |
 | ------- | ----- |
 | CRM | `epa-coleta-progressiva`, `epa-crm-mapa`, `epa-crm-operacoes`, `epa-crm-visitas`, `epa-crm-drive-incorporacao` |
-| WhatsApp | `whatsapp-operacoes`, `whatsapp-onboarding`, `whatsapp-conversas`, `whatsapp-midia` |
+| WhatsApp | `whatsapp-operacoes`, `whatsapp-onboarding`, `whatsapp-conversas`, `whatsapp-midia`, `whatsapp-reconexao` |
 | Drive | `drive-organizacao-documental` |
 
 Proveniência resumida: [docs/proveniencia-skills.md](docs/proveniencia-skills.md). Migração sanitizada integrada; revisão contínua em [docs/migracao.md](docs/migracao.md).

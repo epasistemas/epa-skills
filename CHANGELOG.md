@@ -8,6 +8,12 @@ catálogo agregado (campo `libraryVersion` em `catalog.json`).
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-11-08
+
+### Adicionado
+
+- `whatsapp-reconexao`: conferir e reconectar instância WhatsApp (Evolution via MCP) sem trocar nome nem token; código no celular ou QR em outra tela; acompanhamento finito; conferência do número; sem restart/webhook/settings.
+
 ## [0.2.0] - 2026-11-08
 
 ### Adicionado
