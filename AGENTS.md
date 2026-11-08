@@ -7,10 +7,12 @@ Este arquivo orienta **agentes de IA e automações** que editam `epa-skills`. H
 1. Branch de trabalho **não** é `main`; integrar só via PR.
 2. Branch principal do repositório: **`main`** (nunca renomear para `master`).
 3. Repositório **privado** — não publicar, fork público, template exportado ou pacote registry público.
-4. Não adicionar convidados, credenciais, PII, URLs internas ou tokens reais.
-5. Não contornar 403 de branch protection (tornar público, comprar plano, criar org) sem ordem explícita do mantenedor.
-6. Autor da PR **não** aprova nem faz merge da própria PR.
-7. Skills de plugin/marketplace **não** são copiadas para cá automaticamente.
+4. **Privacidade** — política central em [docs/privacidade.md](docs/privacidade.md): sem PII, contatos, JID, tenant, URL privada, credencial ou config por cliente. Não buscar fontes legadas fora do que o mantenedor anexar sanitizado.
+5. Não adicionar convidados nem contornar plano/privacidade do repositório.
+6. Não contornar 403 de branch protection (tornar público, comprar plano, criar org) sem ordem explícita do mantenedor.
+7. Autor da PR **não** aprova nem faz merge da própria PR.
+8. Skills de plugin/marketplace **não** são copiadas para cá automaticamente.
+9. **Concorrência** — seguir [docs/concorrencia.md](docs/concorrencia.md): sem `reset --hard`, force-push, amend/rebase de commits publicados; integrar remoto com merge; parar em conflito sensível.
 
 ## Estrutura de skill
 
@@ -19,13 +21,21 @@ Este arquivo orienta **agentes de IA e automações** que editam `epa-skills`. H
 - Atualizar `catalog.json` ao adicionar/remover skills
 - Atualizar `CHANGELOG.md` em mudanças visíveis
 
-## Validação antes de push
+## Antes de pull / commit / push
+
+1. `git branch -vv` · `git status` · `git fetch origin`
+2. Comparar SHAs e `git log HEAD..origin/<branch>`
+3. `./scripts/git_concurrency_check.sh` (se behind: merge, não force-push)
+4. Revisar diff **completo** (skills, docs, catalog, workflows, scripts) — não só `SKILL.md`
+5. `./scripts/pre_push.sh` ou comandos equivalentes
+
+## Validação (heurística; revisor humano obrigatório)
 
 ```bash
-python3 scripts/validate_skills.py
-python3 -m unittest discover -s tests -p 'test_*.py' -q
-python3 scripts/scan_secrets.py
+./scripts/pre_push.sh
 ```
+
+`scan_policy.py` reporta apenas `arquivo:linha:regra` — nunca o valor detectado nos logs.
 
 ## Modelo de pull request
 
@@ -37,13 +47,14 @@ Preencher `.github/pull_request_template.md`. Incluir:
 
 ## CI
 
-- Workflow `validate-pr.yml` roda em `pull_request` no mesmo repositório.
-- Não introduzir `pull_request_target` que execute código de contribuidores de fork.
+- Workflow `validate-pr.yml`: job `validate` só no **mesmo repositório**.
+- PR de **fork**: job `fork-manual-validation-required` falha de propósito — **skipped validate ≠ aprovado**.
+- Não introduzir `pull_request_target` executando código de fork.
 - Manter `permissions: contents: read`.
 
-## Segredos em exemplos
+## Segredos e exemplos
 
-Use apenas placeholders documentados em [docs/seguranca.md](docs/seguranca.md).
+Placeholders: [docs/seguranca.md](docs/seguranca.md) e [docs/privacidade.md](docs/privacidade.md). Exceções pontuais: `scripts/privacy_allowlist.json`.
 
 ## Migração futura
 

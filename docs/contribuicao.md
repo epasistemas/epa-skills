@@ -5,9 +5,15 @@
 1. Crie uma branch a partir de `main` (ex.: `feature/minha-skill` ou `cursor/descricao-0b2d` para agentes cloud).
 2. Adicione ou altere conteúdo em `skills/<slug>/`.
 3. Atualize `catalog.json` ao incluir ou remover skills.
-4. Execute validação local: `python3 scripts/validate_skills.py` e `python3 -m unittest discover -s tests -p 'test_*.py'`.
-5. Abra **pull request** para `main` **sem auto-merge**.
-6. Um mantenedor **diferente do autor** revisa e aprova (política humana; o bot não substitui revisor independente).
+4. Leia [privacidade.md](privacidade.md) — sem PII/contato/JID/tenant/URL privada/credencial; config por cliente **fora** do repo.
+5. Execute `./scripts/pre_push.sh` (ou validação equivalente).
+6. Revisar o **diff inteiro** (catálogo, docs, CI, scripts), não apenas skills.
+7. Abra **pull request** para `main` **sem auto-merge**.
+8. Um mantenedor **diferente do autor** revisa e aprova (política humana; o bot não substitui revisor independente).
+
+## Edição paralela (várias IDEs)
+
+Siga [concorrencia.md](concorrencia.md) antes de cada push. O protocolo **não elimina** corrida. Proibido: `reset --hard`, force-push, amend/rebase de commits já no remoto sem acordo explícito.
 
 ## Modelo de pull request
 

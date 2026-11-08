@@ -51,6 +51,7 @@ Estruturar **o que** seria dito ou feito em um canal de mensagens, mantendo comp
 
 ## O que não fazer
 
+- Não incluir números, JIDs, nomes de titular ou histórico real — apenas placeholders `SINTÉTICO` e domínios `example.invalid`.
 - Não enviar mensagens por ferramenta MCP/API sem confirmação explícita do usuário nesta sessão.
 - Não duplicar regras oficiais da Meta ou do provedor — referencie que políticas da plataforma prevalecem.
 - Não assumir que mídia, template HSM ou catálogo existem neste bot.

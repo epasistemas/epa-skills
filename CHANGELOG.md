@@ -6,6 +6,15 @@ O formato segue [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), e o
 versionamento da biblioteca segue [SemVer](https://semver.org/lang/pt-BR/) para o
 catálogo agregado (campo `libraryVersion` em `catalog.json`).
 
+## [Unreleased]
+
+### Adicionado
+
+- Política central de privacidade (`docs/privacidade.md`) e protocolo de concorrência (`docs/concorrencia.md`).
+- `scripts/scan_policy.py`, `privacy_allowlist.json`, `git_concurrency_check.sh`, `pre_push.sh`.
+- Testes de detecção heurística sem vazar valores nos logs.
+- CI: job explícito para PRs de fork (falha = validação manual obrigatória).
+
 ## [0.1.0] - 2026-11-08
 
 ### Adicionado

@@ -37,8 +37,7 @@ Skills **genéricas e originais** neste commit; não há migração automática 
 ```bash
 git clone git@github.com:epasistemas/epa-skills.git
 cd epa-skills
-python3 scripts/validate_skills.py
-python3 -m unittest discover -s tests -p 'test_*.py' -q
+./scripts/pre_push.sh
 ```
 
 Ativação no runtime (Cursor, Grok Bot, outros): [docs/distribuicao.md](docs/distribuicao.md).
@@ -46,7 +45,7 @@ Ativação no runtime (Cursor, Grok Bot, outros): [docs/distribuicao.md](docs/di
 ## Contribuir
 
 1. Branch a partir de `main`.
-2. Siga [docs/contribuicao.md](docs/contribuicao.md) e [AGENTS.md](AGENTS.md).
+2. Siga [docs/privacidade.md](docs/privacidade.md), [docs/contribuicao.md](docs/contribuicao.md), [docs/concorrencia.md](docs/concorrencia.md) e [AGENTS.md](AGENTS.md).
 3. Abra PR; **revisor diferente do autor** aprova.
 
 `CODEOWNERS` aponta `@epasistemas` (não substitui ACL por pasta). Colaboração futura por **grupos** tende a repos privados separados — [docs/arquitetura.md](docs/arquitetura.md).

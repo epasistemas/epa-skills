@@ -9,8 +9,9 @@
 
 ## Checklist
 
-- [ ] `python3 scripts/validate_skills.py` passou
-- [ ] `python3 -m unittest discover -s tests` passou
+- [ ] `./scripts/pre_push.sh` (ou validação equivalente) passou
+- [ ] Diff revisado: skills, `catalog.json`, docs, workflows, scripts — [privacidade.md](docs/privacidade.md)
+- [ ] Migração de skills legadas **não** alegada sem pacote sanitizado anexado neste PR
 - [ ] `catalog.json` atualizado (se aplicável)
 - [ ] `CHANGELOG.md` atualizado (se aplicável)
 - [ ] Sem dados sensíveis (PII, tokens, URLs internas, tenants reais)

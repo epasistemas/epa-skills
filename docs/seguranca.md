@@ -34,19 +34,25 @@ Consultas a proteções/rulesets via API retornaram **403** na conta User sem Gi
 - Revogar acesso **não remove** clones locais ou forks privados já criados.
 - Skills com maior sensibilidade devem migrar para repos privados dedicados no futuro.
 
+## Política de privacidade de conteúdo
+
+Ver [privacidade.md](privacidade.md) — mandatória para todas as contribuições.
+
 ## CI e forks
 
-O workflow de validação:
+| Cenário | Comportamento |
+| ------- | ------------- |
+| PR branch no mesmo repo | Job `validate` roda `validate_skills.py`, `scan_policy.py`, testes |
+| PR de **fork** | Job `fork-manual-validation-required` **falha**; `validate` **skipped** |
+| Interpretação | **Skipped ≠ validação feita** — revisor executa `./scripts/pre_push.sh` localmente |
 
-- Dispara em `pull_request` no mesmo repositório.
-- **Não usa** `pull_request_target` para executar código de forks (evita RCE por PR malicioso).
-- PRs de fork externo: validação local exigida pelo revisor; CI pode não rodar com o mesmo trust model.
+- **Não usa** `pull_request_target` para executar código de forks (evita RCE e vazamento de segredos de CI).
 
 Permissões mínimas: `contents: read` (ver workflow).
 
-## Detecção de segredos — limitações
+## Detecção automática — limitações
 
-A CI pode varrer padrões comuns (ver `scripts/scan_secrets.py`). **Limitações:**
+`scripts/scan_policy.py` (privacidade + segredos). Saída **redigida** (`arquivo:linha:regra`). **Limitações:**
 
 - Não detecta segredos codificados de forma customizada ou em imagens.
 - Falsos positivos em exemplos de documentação são possíveis — use apenas placeholders sintéticos.

@@ -1,0 +1,4 @@
+{
+  "$schema_note": "Exceções pontuais: path relativo ao repo, line (1-based), rule id, reason. Sem entradas por diretório inteiro.",
+  "exceptions": []
+}

@@ -12,8 +12,18 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  fork-manual-validation-required:
+    if: github.event.pull_request.head.repo.full_name != github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fork PR — validação automatizada não executada
+        run: |
+          echo "::error::PR de fork: por segurança, não rodamos scripts do contribuidor na CI."
+          echo "Revisor deve executar localmente: ./scripts/pre_push.sh"
+          echo "Skipped validate NÃO conta como aprovado."
+          exit 1
+
   validate:
-    # PRs from forks: job skipped (no untrusted code in CI)
     if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     steps:
@@ -28,8 +38,8 @@ jobs:
       - name: Validate skills layout
         run: python3 scripts/validate_skills.py
 
-      - name: Heuristic secret scan
-        run: python3 scripts/scan_secrets.py
+      - name: Policy scan (privacy + secrets, redacted output)
+        run: python3 scripts/scan_policy.py
 
       - name: Run tests
         run: python3 -m unittest discover -s tests -p 'test_*.py' -q
