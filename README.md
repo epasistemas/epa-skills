@@ -21,16 +21,15 @@ scripts/                  # validação e varredura heurística de segredos
 AGENTS.md                 # regras para agentes que editam o repo
 ```
 
-### Skills incluídas (0.1.0)
+### Skills publicadas (`catalog.json`, 0.2.0)
 
-| Slug | Foco |
-| ---- | ---- |
-| `epa-coleta-progressiva` | Coleta conversacional passo a passo |
-| `epa-crm-operacao-revisao` | Preparação/revisão de operações CRM |
-| `epa-crm-conhecimento-mapeamento` | Glossário e fluxos em texto |
-| `epa-wa-operacao-revisao` | Rascunhos e revisão de operações WhatsApp (agnóstico) |
+| Domínio | Slugs |
+| ------- | ----- |
+| CRM | `epa-coleta-progressiva`, `epa-crm-mapa`, `epa-crm-operacoes`, `epa-crm-visitas`, `epa-crm-drive-incorporacao` |
+| WhatsApp | `whatsapp-operacoes`, `whatsapp-onboarding`, `whatsapp-conversas`, `whatsapp-midia` |
+| Drive | `drive-organizacao-documental` |
 
-Skills **genéricas e originais** neste commit; não há migração automática de skills internas legadas — veja [docs/migracao.md](docs/migracao.md) para candidatos futuros (`wa-bot-ops`, `epa-visitas-*`, etc.).
+Proveniência resumida: [docs/proveniencia-skills.md](docs/proveniencia-skills.md). Migração sanitizada integrada; revisão contínua em [docs/migracao.md](docs/migracao.md).
 
 ## Uso rápido (desenvolvedor)
 

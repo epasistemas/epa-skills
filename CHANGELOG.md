@@ -8,12 +8,26 @@ catálogo agregado (campo `libraryVersion` em `catalog.json`).
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-11-08
+
 ### Adicionado
 
-- Política central de privacidade (`docs/privacidade.md`) e protocolo de concorrência (`docs/concorrencia.md`).
-- `scripts/scan_policy.py`, `privacy_allowlist.json`, `git_concurrency_check.sh`, `pre_push.sh`.
-- Testes de detecção heurística sem vazar valores nos logs.
-- CI: job explícito para PRs de fork (falha = validação manual obrigatória).
+- Dez skills sanitizadas CRM / WhatsApp / Drive (pacote mantenedor).
+- `docs/runtime-guardrails.md`, `docs/proveniencia-skills.md`.
+
+### Alterado
+
+- `epa-coleta-progressiva` fundida com rascunho da PR e pacote sanitizado.
+- Slugs aposentados fundidos: `epa-crm-operacao-revisao`, `epa-crm-conhecimento-mapeamento`, `epa-wa-operacao-revisao`.
+- Biblioteca `0.2.0` em `catalog.json`.
+
+### Já em 0.1.0 / unreleased anterior
+
+- Política de privacidade, concorrência, `scan_policy.py`, CI fork vs mesmo repo.
+
+### Limitações
+
+- Scanner heurístico + revisão humana; sem teste em sistemas reais.
 
 ## [0.1.0] - 2026-11-08
 

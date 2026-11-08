@@ -1,28 +1,72 @@
 {
-  "libraryVersion": "0.1.0",
+  "libraryVersion": "0.2.0",
   "repository": "epasistemas/epa-skills",
   "defaultBranch": "main",
   "skills": [
     {
+      "slug": "drive-organizacao-documental",
+      "path": "skills/drive-organizacao-documental",
+      "metadataVersion": "0.2.0",
+      "domain": "drive"
+    },
+    {
       "slug": "epa-coleta-progressiva",
       "path": "skills/epa-coleta-progressiva",
-      "spec": "agentskills.io",
-      "metadataVersion": "0.1.0"
+      "metadataVersion": "0.2.0",
+      "domain": "crm"
     },
     {
-      "slug": "epa-crm-operacao-revisao",
-      "path": "skills/epa-crm-operacao-revisao",
-      "metadataVersion": "0.1.0"
+      "slug": "epa-crm-drive-incorporacao",
+      "path": "skills/epa-crm-drive-incorporacao",
+      "metadataVersion": "0.2.0",
+      "domain": "crm"
     },
     {
-      "slug": "epa-crm-conhecimento-mapeamento",
-      "path": "skills/epa-crm-conhecimento-mapeamento",
-      "metadataVersion": "0.1.0"
+      "slug": "epa-crm-mapa",
+      "path": "skills/epa-crm-mapa",
+      "metadataVersion": "0.2.0",
+      "domain": "crm"
     },
     {
-      "slug": "epa-wa-operacao-revisao",
-      "path": "skills/epa-wa-operacao-revisao",
-      "metadataVersion": "0.1.0"
+      "slug": "epa-crm-operacoes",
+      "path": "skills/epa-crm-operacoes",
+      "metadataVersion": "0.2.0",
+      "domain": "crm"
+    },
+    {
+      "slug": "epa-crm-visitas",
+      "path": "skills/epa-crm-visitas",
+      "metadataVersion": "0.2.0",
+      "domain": "crm"
+    },
+    {
+      "slug": "whatsapp-conversas",
+      "path": "skills/whatsapp-conversas",
+      "metadataVersion": "0.2.0",
+      "domain": "whatsapp"
+    },
+    {
+      "slug": "whatsapp-midia",
+      "path": "skills/whatsapp-midia",
+      "metadataVersion": "0.2.0",
+      "domain": "whatsapp"
+    },
+    {
+      "slug": "whatsapp-onboarding",
+      "path": "skills/whatsapp-onboarding",
+      "metadataVersion": "0.2.0",
+      "domain": "whatsapp"
+    },
+    {
+      "slug": "whatsapp-operacoes",
+      "path": "skills/whatsapp-operacoes",
+      "metadataVersion": "0.2.0",
+      "domain": "whatsapp"
     }
+  ],
+  "retiredSlugs": [
+    "epa-crm-conhecimento-mapeamento",
+    "epa-crm-operacao-revisao",
+    "epa-wa-operacao-revisao"
   ]
 }

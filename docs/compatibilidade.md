@@ -1,6 +1,6 @@
 # Matriz de compatibilidade
 
-Versão da biblioteca: **0.1.0** (`catalog.json`).
+Versão da biblioteca: **0.2.0** (`catalog.json`).
 
 Legenda:
 
@@ -15,14 +15,11 @@ Legenda:
 | Agent SDK / hosted | Suportado | Suportado | Assistido | Experimental | Deploy separado do conteúdo Git |
 | Forks públicos | N/A | N/A | **Proibido** para este repo | N/A | Repo permanece privado |
 
-## Compatibilidade por skill (0.1.0)
+## Compatibilidade por skill (0.2.0)
 
-| Skill (`name`) | Rede | Dados externos | Ferramentas específicas |
-| -------------- | ---- | -------------- | ----------------------- |
-| `epa-coleta-progressiva` | Opcional | Não exige | Nenhuma obrigatória |
-| `epa-crm-operacao-revisao` | Opcional | Não exige | Nenhuma obrigatória |
-| `epa-crm-conhecimento-mapeamento` | Opcional | Não exige | Nenhuma obrigatória |
-| `epa-wa-operacao-revisao` | Opcional | Não exige | Nenhuma obrigatória |
+Todas as skills listadas em `catalog.json`: rede opcional conforme conector do runtime; **nenhuma** ferramenta MCP/API obrigatória; dados reais apenas no contexto privado de execução.
+
+Slugs **aposentados** (conteúdo fundido): `epa-crm-operacao-revisao` → `epa-crm-operacoes`; `epa-crm-conhecimento-mapeamento` → `epa-crm-mapa`; `epa-wa-operacao-revisao` → `whatsapp-operacoes`.
 
 ## Política de versão
 

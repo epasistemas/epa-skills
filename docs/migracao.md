@@ -1,6 +1,6 @@
 # Checklist de migração (sanitização)
 
-**Status:** migração CRM/Drive/WhatsApp **não concluída**. O mantenedor enviará pacote **sanitizado** por anexo quando pronto. Agentes **não** devem procurar fontes reais em outros repositórios ou ambientes.
+**Status:** pacote sanitizado de **10 skills** integrado na PR (reescritas genéricas). Continua valendo revisão humana por commit; não equivale a teste em CRM/Drive/WhatsApp real. Agentes **não** devem buscar fontes legadas fora do repositório.
 
 Use este checklist ao **importar** skills de ambientes internos (inventário candidato: `wa-bot-ops`, `epa-browser-ops`, `epa-mapa`, `crm-knowledge-map`, `epa-coleta-conversacional`, `epa-visitas-ops`, `epa-visitas-validacao`, `epa-wa-*`, onboarding, etc.). **Não** buscar nem commitar arquivos de origem não entregues neste repositório.
 
